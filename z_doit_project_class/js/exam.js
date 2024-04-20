@@ -84,7 +84,29 @@ $(function () {
         $('#total_menu').hide();
     })
     //(7) 그 외 추가적으로 구현하면 해당 화면 캡쳐 파일을 추가로 업로드 합니다.
+
     
+    var scale = 1;
+    var containerWidth = $("#roll_banner_wrap").width();
+    var containerHeight = $("#roll_banner_wrap").height();
+
+    // 확대 버튼 클릭 시
+    $(".zoom_in").click(function() {
+        scale += 0.1;
+        $("#roll_banner_wrap").css("width", containerWidth * scale);
+        $("#roll_banner_wrap").css("height", containerHeight * scale);
+    });
+
+    // 축소 버튼 클릭 시
+    $(".zoom_out").click(function() {
+        scale -= 0.1;
+        $("#roll_banner_wrap").css("width", containerWidth * scale);
+        $("#roll_banner_wrap").css("height", containerHeight * scale);
+    });
+
+    $('.util_menu > dd:nth-child(4) > a > img').click(function(){
+        window.print();
+    });
 })
 
 
